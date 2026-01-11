@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    function openNav() {
-        document.getElementById("navbar").style.width = "100%";
-    }
+    const nav = document.getElementById("navbar");
+    const openBtn = document.getElementById("navBtn");
+    const closeBtn = document.querySelector(".closeBtn");
 
-    function closeNav() {
-        document.getElementById("navbar").style.width = "0%";
-    }
+    openBtn.addEventListener("click", () => {
+        nav.classList.add("active");
+    });
 
-    document.querySelector("#navBtn").addEventListener("click", openNav);
-    document.querySelector(".closeBtn").addEventListener("click", closeNav);
+    closeBtn.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
 });
